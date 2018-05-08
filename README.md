@@ -7,8 +7,8 @@ view generated business statements.
 ## Development Requirements
 
 * [Git](https://git-scm.com/)
-* [VirtualBox 5.1.x](https://www.virtualbox.org/)
-* [Vagrant 2.0.x](https://www.vagrantup.com/)
+* [VirtualBox 5.2.x](https://www.virtualbox.org/)
+* [Vagrant 2.1.x](https://www.vagrantup.com/)
 
 Software versions other than the ones specified may work, but it is not
 recommended to deviate from these requirements. Where a flexible version range

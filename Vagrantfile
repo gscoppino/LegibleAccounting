@@ -1,10 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
-Vagrant.require_version ">= 2.0.0", "< 2.1.0"
+Vagrant.require_version ">= 2.1.0", "< 2.2.0"
 Vagrant.configure("2") do |config|
 
   config.vm.box = "bento/centos-7.4"
+  config.vm.box_version = "201803.24.0"
   config.vm.box_check_update = true
 
   config.vm.network "forwarded_port", guest: 80, host: 8079
