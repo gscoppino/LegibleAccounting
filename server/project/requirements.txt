@@ -1,4 +1,4 @@
-Django==1.11
+Django==1.11.13
 django-auditlog==0.4.5
 django-extra-fields==0.9
 django-filter==1.1.0
