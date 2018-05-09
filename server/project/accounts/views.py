@@ -5,7 +5,7 @@ from django_filters.rest_framework import DjangoFilterBackend
 from journalize.enums import JournalEntryTypes
 from journalize.models import JournalEntry, Transaction
 from rest_framework import viewsets
-from rest_framework.decorators import detail_route, list_route
+from rest_framework.decorators import action
 from rest_framework.filters import SearchFilter, OrderingFilter
 from rest_framework.permissions import AllowAny, DjangoModelPermissions
 from rest_framework.response import Response
@@ -47,13 +47,12 @@ class AccountViewSet(viewsets.ModelViewSet):
 
         return RetrieveAccountSerializer
 
-    @detail_route(methods=['get'])
+    @action(detail=True, methods=['get'])
     def ledger(self, request, pk=None):
         serializer = LedgerAccountSerializer(Account.objects.get(pk=pk))
         return Response(serializer.data)
 
-    #Current Ratio is the current total of assets divided by the current total of liabilities
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def current_ratio(self, request):
         cr = {
             "status" : "",
@@ -89,7 +88,7 @@ class AccountViewSet(viewsets.ModelViewSet):
 
         return Response(cr)
 
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def return_on_assets(self, request):
         ratio = 0
         status = ""
@@ -128,7 +127,7 @@ class AccountViewSet(viewsets.ModelViewSet):
             'status': status
         })
 
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def return_on_equity(self, request):
         ratio = 0
         status = ""
@@ -167,7 +166,7 @@ class AccountViewSet(viewsets.ModelViewSet):
             'status': status
         })
 
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def net_profit_margin(self, request):
         ratio = 0
         status = ""
@@ -204,7 +203,7 @@ class AccountViewSet(viewsets.ModelViewSet):
             'status': status
         })
 
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def asset_turnover(self, request):
         ratio = 0
         status = ""
@@ -240,7 +239,7 @@ class AccountViewSet(viewsets.ModelViewSet):
             'status': status
         })
 
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def quick_ratio(self, request):
         ratio = 0
         status = ""
@@ -281,7 +280,7 @@ class AccountViewSet(viewsets.ModelViewSet):
             'status': status
         })
 
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def trial_balance(self, request):
         active_accounts = Account.objects.filter(is_active=True)
         nonzero_accounts = []
@@ -312,7 +311,7 @@ class AccountViewSet(viewsets.ModelViewSet):
             'as_of_date': timezone.now()
         })
 
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def income_statement(self, request):
         accounts = Account.objects.filter(is_active=True, account_type__category__in=[
             AccountCategories.REVENUE,
@@ -351,7 +350,7 @@ class AccountViewSet(viewsets.ModelViewSet):
             'as_of_date': timezone.now()
         })
 
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def retained_earnings(self, request):
         accounts = Account.objects.filter(is_active=True, account_type__category__in=[
             AccountCategories.EQUITY,
@@ -388,7 +387,7 @@ class AccountViewSet(viewsets.ModelViewSet):
             'as_of_date': timezone.now()
         })
 
-    @list_route(methods=['get'])
+    @action(detail=False, methods=['get'])
     def balance_sheet(self, request):
         active_accounts = Account.objects.filter(is_active=True)
         current_assets = []
@@ -477,7 +476,7 @@ class AccountViewSet(viewsets.ModelViewSet):
 
         return Response(response)
 
-    @list_route(methods=['post'], permission_classes=[LAAccountsClosingPermission])
+    @action(detail=False, methods=['post'], permission_classes=[LAAccountsClosingPermission])
     def close_accounts(self, request):
         accounts = Account.objects.filter(is_active=True, account_type__category__in=[
             AccountCategories.EQUITY,
