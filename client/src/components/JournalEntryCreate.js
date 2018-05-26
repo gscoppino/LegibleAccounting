@@ -10,8 +10,9 @@ class JournalEntryCreate extends Component {
 
         this.lastKey = null; // Used to uniquely identify transactions for React
 
+        this.filePicker = null;
+
         this.state = {
-            filePicker: null,
             isLoading: false,
             entry_type: '',
             date: moment().format('YYYY-MM-DD'),
@@ -92,7 +93,7 @@ class JournalEntryCreate extends Component {
                             <textarea type="text" className="form-control description" cols="1" rows="1" placeholder="Description" value={this.state.description} onChange={this.changeDescription}/>
                         </div>
                         <div className="pad-file-input fileInput">
-                            <input type="file" multiple ref={ input => this.state.filePicker = input } />
+                            <input type="file" multiple ref={ input => this.filePicker = input } />
                         </div>
                     </div>
                     <div className="col-xs-12 col-sm-8">
@@ -211,15 +212,22 @@ class JournalEntryCreate extends Component {
             .length;
 
         if (relatedCount === 1) {
-            this.state.transactions[index].accountID = "";
-            this.state.transactions[index].amount = "0";
+            this.setState({
+                transactions: Object.assign([...this.state.transactions], {
+                    [index]: Object.assign({}, this.state.transactions[index], {
+                        accountID: "",
+                        amount: "0"
+                    })
+                })
+            });
         } else if (relatedCount > 1) {
-            this.state.transactions.splice(index, 1);
+            this.setState({
+                transactions: [
+                    ...this.state.transactions.slice(0, index),
+                    ...this.state.transactions.slice(index + 1, this.state.transactions.length)
+                ]
+            });
         }
-
-        this.setState({
-            transactions: this.state.transactions
-        });
     }
 
     accountNameOnChange(event, transactionIndex) {
@@ -284,8 +292,8 @@ class JournalEntryCreate extends Component {
 
     delegateJournalEntrySubmission() {
         let awaitingFiles = [];
-        for (let i = 0; i < this.state.filePicker.files.length; i++) {
-            awaitingFiles.push(this.loadFile(this.state.filePicker.files[i]));
+        for (let i = 0; i < this.filePicker.files.length; i++) {
+            awaitingFiles.push(this.loadFile(this.filePicker.files[i]));
         }
 
         Promise.all(awaitingFiles)
