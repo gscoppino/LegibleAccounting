@@ -105,7 +105,7 @@ class JournalEntry extends Component {
                             this.props.entry.transactions.map((item, index) => (
                                 <div className="row auto-height transactionWrapper" key={item.affected_account.id}>
                                     <div className="col-xs-12 col-sm-6">
-                                        <div className={"accountNameWrapper accountEntry " + (item.is_debit ? '' : 'creditAccountEntry')}>
+                                        <div className={"accountNameWrapper " + (item.is_debit ? '' : 'creditAccountEntry')}>
                                             <div className="accountName">
                                                <NavLink to={'/accounts/'+item.affected_account.id + '/ledger'}>{item.affected_account.account_number}</NavLink> - {item.affected_account.name}
                                             </div>
