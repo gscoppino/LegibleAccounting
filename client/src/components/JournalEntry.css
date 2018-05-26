@@ -10,20 +10,6 @@
 	border-bottom: 2px solid #EAEAEA;
 }
 
-.journalEntry .approved {
-	background-color: #7ED321;
-	color: white;
-	border-radius: 5px;
-	padding: 5px;
-}
-
-.journalEntry .rejected {
-	background-color: #ff6961;
-	color: white;
-	border-radius: 5px;
-	padding: 5px;
-}
-
 .journalInfoWrapper {
 	display: flex;
 	flex-direction: row;
@@ -61,27 +47,8 @@
 	margin-bottom: 10px;
 }
 
-.approvedWrapper { 
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.approvedRejectedWrapper {
-	margin-right: 5px;
-	margin-left: auto;
-}
-
-.accountEntry {
-}
-
 .creditAccountEntry {
 	margin-left: 40px;
-}
-
-.descriptionTitle {
-	margin-right: 10px;
-	font-weight: bold;
 }
 
 .description {
@@ -139,10 +106,6 @@
 .accountNameWrapper {
 	display: flex;
 	flex-direction: row;
-}
-
-.attachmentSpace {
-	flex-grow: 1;
 }
 
 .glyphiconButton {
