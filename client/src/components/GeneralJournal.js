@@ -68,9 +68,17 @@ class GeneralJournal extends Component {
         this.toggleNewJournalUI = this.toggleNewJournalUI.bind(this);
         this.submitNewJournalEntry = this.submitNewJournalEntry.bind(this);
         this.closeJournal = this.closeJournal.bind(this);
-        this.toggleStartRangeCalendar = this.toggleStartRangeCalendar.bind(this);
+        this.changeStartRangeDate = this.changeStartRangeDate.bind(this);
+        this.changeEndRangeDate = this.changeEndRangeDate.bind(this);
+        this.setStartRangeCalendarClosed = this.setStartRangeCalendarClosed.bind(this);
+        this.setEndRangeCalendarClosed = this.setEndRangeCalendarClosed.bind(this);
         this.renderStartRangeDatePickerField = this.renderStartRangeDatePickerField.bind(this);
         this.renderEndRangeDatePickerField = this.renderEndRangeDatePickerField.bind(this);
+        this.filterByDateRange = this.filterByDateRange.bind(this);
+        this.removeDateRangeFilter = this.removeDateRangeFilter.bind(this);
+        this.handleJournalFilterSelection = this.handleJournalFilterSelection.bind(this);
+        this.approveJournalEntry = this.approveJournalEntry.bind(this);
+        this.rejectJournalEntry = this.rejectJournalEntry.bind(this);
     }
 
     render() {
@@ -105,13 +113,13 @@ class GeneralJournal extends Component {
                 <div>
                     <div className="flex-row flex-v-center journal-filters">
                         <h4 style={{ marginLeft: '3rem', marginRight: '1rem' }}>Start Date: </h4>
-                        <DateTime renderInput={this.renderStartRangeDatePickerField} timeFormat={false} dateFormat="YYYY-MM-DD" value={this.state.rangeStartDate} onChange={this.changeStartRangeDate.bind(this)} onBlur={this.setStartRangeCalendarClosed.bind(this)}/>
+                        <DateTime renderInput={this.renderStartRangeDatePickerField} timeFormat={false} dateFormat="YYYY-MM-DD" value={this.state.rangeStartDate} onChange={this.changeStartRangeDate} onBlur={this.setStartRangeCalendarClosed}/>
                         <h4 style={{ marginLeft: '1rem', marginRight: '1rem' }}>End Date: </h4>
-                        <DateTime renderInput={this.renderEndRangeDatePickerField} timeFormat={false} dateFormat="YYYY-MM-DD" value={this.state.rangeEndDate} onChange={this.changeEndRangeDate.bind(this)} onBlur={this.setEndRangeCalendarClosed.bind(this)}/>
-                        { !this.state.isFilteringDateRange && (<button style={{ marginLeft: '1rem' }} className="btn btn-primary" onClick={this.filterByDateRange.bind(this)}>Filter</button>) }
-                        { this.state.isFilteringDateRange && (<button style={{ marginLeft: '1rem' }} className="btn btn-danger" onClick={this.removeDateRangeFilter.bind(this)}>Clear</button>) }
+                        <DateTime renderInput={this.renderEndRangeDatePickerField} timeFormat={false} dateFormat="YYYY-MM-DD" value={this.state.rangeEndDate} onChange={this.changeEndRangeDate} onBlur={this.setEndRangeCalendarClosed}/>
+                        { !this.state.isFilteringDateRange && (<button style={{ marginLeft: '1rem' }} className="btn btn-primary" onClick={this.filterByDateRange}>Filter</button>) }
+                        { this.state.isFilteringDateRange && (<button style={{ marginLeft: '1rem' }} className="btn btn-danger" onClick={this.removeDateRangeFilter}>Clear</button>) }
                         <div className="flex-fill"></div>
-                        <Nav bsStyle="pills" activeKey={this.state.activeFilter} onSelect={this.handleJournalFilterSelection.bind(this)}>
+                        <Nav bsStyle="pills" activeKey={this.state.activeFilter} onSelect={this.handleJournalFilterSelection}>
                             <NavItem eventKey={1}>
                               All
                             </NavItem>
@@ -141,7 +149,7 @@ class GeneralJournal extends Component {
                     }
                     {
                             this.state.entries.map((item, index) => (
-                                <JournalEntry key={item.date_created} entry={item} onApprove={this.approveJournalEntry.bind(this)} onReject={this.rejectJournalEntry.bind(this)}/>
+                                <JournalEntry key={item.date_created} entry={item} onApprove={this.approveJournalEntry} onReject={this.rejectJournalEntry}/>
                             ))
                     }
                 </div>
@@ -172,7 +180,7 @@ class GeneralJournal extends Component {
     renderStartRangeDatePickerField(props, openCalendarFn, closeCalendarFn) {
         return (
             <div>
-                <button className="btn btn-default" onClick={this.toggleStartRangeCalendar.bind(this, openCalendarFn, closeCalendarFn)}>
+                <button className="btn btn-default" onClick={() => this.toggleStartRangeCalendar(openCalendarFn, closeCalendarFn)}>
                     <Glyphicon glyph="calendar" />
                 </button>
                 <label className="date-left-margin">{ this.state.rangeStartDate }</label>
@@ -183,7 +191,7 @@ class GeneralJournal extends Component {
     renderEndRangeDatePickerField(props, openCalendarFn, closeCalendarFn) {
         return (
             <div>
-                <button className="btn btn-default" onClick={this.toggleEndRangeCalendar.bind(this, openCalendarFn, closeCalendarFn)}>
+                <button className="btn btn-default" onClick={() => this.toggleEndRangeCalendar(openCalendarFn, closeCalendarFn)}>
                     <Glyphicon glyph="calendar" />
                 </button>
                 <label className="date-left-margin">{ this.state.rangeEndDate }</label>

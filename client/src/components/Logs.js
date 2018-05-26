@@ -19,6 +19,9 @@ class Logs extends Component {
 
         this.searchTextChanged = this.searchTextChanged.bind(this);
         this.search = this.search.bind(this);
+        this.sortByObjectRepresentation = this.sort.bind(this, 'object_repr');
+        this.sortByActorUsername = this.sort.bind(this, 'actor__username');
+        this.sortByTimestamp = this.sort.bind(this, 'timestamp');
 
         LogsAPI.getAll()
             .then(data => {
@@ -50,18 +53,18 @@ class Logs extends Component {
                         <tr>
                             <th className="changed">Changed <SortWidget
                               state={this.state.sortState.object_repr}
-                              onClick={this.sort.bind(this, 'object_repr')} />
+                              onClick={this.sortByObjectRepresentation} />
                             </th>
                             <th className="change-fieldName">Field Changed</th>
                             <th className="change-fromValue">From</th>
                             <th className="change-toValue">To</th>
                             <th className="changedBy">Changed By <SortWidget
                               state={this.state.sortState.actor__username}
-                              onClick={this.sort.bind(this, 'actor__username')} />
+                              onClick={this.sortByActorUsername} />
                             </th>
                             <th>Date <SortWidget
                               state={this.state.sortState.timestamp}
-                              onClick={this.sort.bind(this, 'timestamp')} />
+                              onClick={this.sortByTimestamp} />
                             </th>
                         </tr>
                       </thead>

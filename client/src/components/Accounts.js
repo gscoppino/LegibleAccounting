@@ -23,6 +23,10 @@ class Accounts extends Component {
 
         this.searchTextChanged = this.searchTextChanged.bind(this);
         this.search = this.search.bind(this);
+        this.sortByAccountNumber = this.sort.bind(this, 'accountNumber', ['account_type__order', 'order']);
+        this.sortByName = this.sort.bind(this, 'name');
+        this.sortByAccountTypeCategory = this.sort.bind(this, 'account_type__category');
+        this.sortByAccountTypeName = this.sort.bind(this, 'account_type__name');
 
         AccountsAPI.getAll()
             .then(data => {
@@ -61,19 +65,19 @@ class Accounts extends Component {
                         <tr>
                             <th className="accountNumber"><div>Account</div>Number <SortWidget
                               state={this.state.sortState.accountNumber}
-                              onClick={this.sort.bind(this, 'accountNumber', ['account_type__order', 'order'])} />
+                              onClick={this.sortByAccountNumber} />
                             </th>
                             <th className="name">Name <SortWidget
                               state={this.state.sortState.name}
-                              onClick={this.sort.bind(this, 'name')} />
+                              onClick={this.sortByName} />
                             </th>
                             <th className="type">Type <SortWidget
                               state={this.state.sortState.account_type__category}
-                              onClick={this.sort.bind(this, 'account_type__category')} />
+                              onClick={this.sortByAccountTypeCategory} />
                             </th>
                             <th className="subtype hidden-xs hidden-sm">Sub-Type <SortWidget
                               state={this.state.sortState.account_type__name}
-                              onClick={this.sort.bind(this, 'account_type__name')} />
+                              onClick={this.sortByAccountTypeName} />
                             </th>
                             <th className="term">Term</th>
                             <th className="comments hidden-xs hidden-sm">Comments</th>
