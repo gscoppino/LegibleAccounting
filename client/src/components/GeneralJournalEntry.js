@@ -89,6 +89,12 @@ class GeneralJournalEntry extends Component {
     approveJournalEntry(journalEntryId) {
         GeneralJournalAPI.update({ id: journalEntryId, is_approved: true })
             .then(() => {
+                this.setState({
+                    entry: Object.assign({}, this.state.entry, {
+                        is_approved: true
+                    })
+                });
+
                 this.props.onNotifySuccess('Journal Entry has been successfully approved.');
             })
             .catch(() => {
@@ -100,6 +106,12 @@ class GeneralJournalEntry extends Component {
     rejectJournalEntry(journalEntryId, rejectionMemo) {
         GeneralJournalAPI.update({ id: journalEntryId, is_approved: false, memo: rejectionMemo })
             .then(() => {
+                this.setState({
+                    entry: Object.assign({}, this.state.entry, {
+                        is_approved: false
+                    })
+                });
+
                 this.props.onNotifySuccess('Journal Entry has been successfully rejected.');
             })
             .catch((response) => {
