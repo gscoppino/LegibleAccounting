@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
-import { Glyphicon } from 'react-bootstrap';
+import SortWidget from './SortWidget.js';
 import './ChartOfAccounts.css';
 import './CommonChart.css';
 import Auth from '../api/Auth.js';
@@ -59,29 +59,13 @@ class ChartOfAccounts extends Component {
 			        <table className="table table-hover">
 					  <thead>
 					  	<tr>
-						    <th className="accountNumber"><div>Account</div>Number
-                            {
-                                !this.state.sortState.accountNumber || this.state.sortState.accountNumber === 'asc' ? (
-                                    <Glyphicon glyph="chevron-up" className={!this.state.sortState.accountNumber ? 'sorter sorter-inactive' : 'sorter'}
-                                      onClick={this.sort.bind(this, 'accountNumber', ['account_type__order', 'order'])} />
-                                ): (
-                                    <Glyphicon glyph="chevron-down" className="sorter"
-                                      onClick={this.sort.bind(this, 'accountNumber', ['account_type__order', 'order'])} />
-                                )
-                            }
-                            { this.state.sortState.accountNumber }
+						    <th className="accountNumber"><div>Account</div>Number <SortWidget
+                              state={this.state.sortState.accountNumber}
+                              onClick={this.sort.bind(this, 'accountNumber', ['account_type__order', 'order'])} />
                             </th>
-						    <th className="name">Name
-                            {
-                                !this.state.sortState.name || this.state.sortState.name === 'asc' ? (
-                                    <Glyphicon glyph="chevron-up" className={!this.state.sortState.name ? 'sorter sorter-inactive' : 'sorter'}
-                                      onClick={this.sort.bind(this, 'name')} />
-                                ): (
-                                    <Glyphicon glyph="chevron-down" className="sorter"
-                                      onClick={this.sort.bind(this, 'name')} />
-                                )
-                            }
-                            { this.state.sortState.name }
+						    <th className="name">Name <SortWidget
+                              state={this.state.sortState.name}
+                              onClick={this.sort.bind(this, 'name')} />
                             </th>
                             <th className="accountType">Type</th>
                             <th className="accountTerm">Term</th>

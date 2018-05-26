@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Glyphicon } from 'react-bootstrap';
+import SortWidget from './SortWidget.js';
 import './Logs.css';
 import './CommonChart.css';
 import LogsAPI from '../api/Logs.js';
@@ -48,44 +48,20 @@ class Logs extends Component {
                     <table className="table table-hover">
                       <thead>
                         <tr>
-                            <th className="changed">Changed
-                            {
-                                !this.state.sortState.object_repr || this.state.sortState.object_repr === 'asc' ? (
-                                    <Glyphicon glyph="chevron-up" className={!this.state.sortState.object_repr ? 'sorter sorter-inactive' : 'sorter'}
-                                      onClick={this.sort.bind(this, 'object_repr')} />
-                                ): (
-                                    <Glyphicon glyph="chevron-down" className="sorter"
-                                      onClick={this.sort.bind(this, 'object_repr')} />
-                                )
-                            }
-                            { this.state.sortState.object_repr }
+                            <th className="changed">Changed <SortWidget
+                              state={this.state.sortState.object_repr}
+                              onClick={this.sort.bind(this, 'object_repr')} />
                             </th>
                             <th className="change-fieldName">Field Changed</th>
                             <th className="change-fromValue">From</th>
                             <th className="change-toValue">To</th>
-                            <th className="changedBy">Changed By
-                            {
-                                !this.state.sortState.actor__username || this.state.sortState.actor__username === 'asc' ? (
-                                    <Glyphicon glyph="chevron-up" className={!this.state.sortState.actor__username ? 'sorter sorter-inactive' : 'sorter'}
-                                      onClick={this.sort.bind(this, 'actor__username')} />
-                                ): (
-                                    <Glyphicon glyph="chevron-down" className="sorter"
-                                      onClick={this.sort.bind(this, 'actor__username')} />
-                                )
-                            }
-                            { this.state.sortState.actor__username }
+                            <th className="changedBy">Changed By <SortWidget
+                              state={this.state.sortState.actor__username}
+                              onClick={this.sort.bind(this, 'actor__username')} />
                             </th>
-                            <th>Date
-                            {
-                                !this.state.sortState.timestamp || this.state.sortState.timestamp === 'asc' ? (
-                                    <Glyphicon glyph="chevron-up" className={!this.state.sortState.timestamp ? 'sorter sorter-inactive' : 'sorter'}
-                                      onClick={this.sort.bind(this, 'timestamp')} />
-                                ): (
-                                    <Glyphicon glyph="chevron-down" className="sorter"
-                                      onClick={this.sort.bind(this, 'timestamp')} />
-                                )
-                            }
-                            { this.state.sortState.timestamp }
+                            <th>Date <SortWidget
+                              state={this.state.sortState.timestamp}
+                              onClick={this.sort.bind(this, 'timestamp')} />
                             </th>
                         </tr>
                       </thead>
