@@ -39,18 +39,3 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-
-.chartOfAccounts .sorter {
-    border: 1px solid transparent;
-    border-radius: 4px;
-    margin-left: 0.5em;
-    padding: 0.25em;
-}
-
-.chartOfAccounts .sorter:hover {
-    border: 1px solid #ccc;
-}
-
-.chartOfAccounts .sorter-inactive {
-    color: #CCC;
-}
