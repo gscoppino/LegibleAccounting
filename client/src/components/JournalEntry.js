@@ -13,6 +13,12 @@ class JournalEntry extends Component {
             managementMode: 0, // 1 = 'Approve' | 2 = 'Reject'
             memo: ''
         };
+
+        this.beginEntryApproval = this.beginEntryApproval.bind(this);
+        this.beginEntryRejection = this.beginEntryRejection.bind(this);
+        this.changeMemo = this.changeMemo.bind(this);
+        this.endEntryManagement = this.endEntryManagement.bind(this);
+        this.delegateJournalEntryManagement = this.delegateJournalEntryManagement.bind(this);
     }
 
     render() {
@@ -131,10 +137,10 @@ class JournalEntry extends Component {
                             <div className="flex-fill"></div>
                             <button className="btn cancelButton submitButton"
                               style={{ display: (!(Auth.currentUserIsManager()) || !(this.props.entry.is_approved === null)) && 'none' }}
-                              onClick={this.beginEntryRejection.bind(this)}>Reject</button>
+                              onClick={this.beginEntryRejection}>Reject</button>
                             <button
                               style={{ display: (!(Auth.currentUserIsManager()) || !(this.props.entry.is_approved === null)) && 'none' }}
-                              className="btn btn-primary submitButton" onClick={this.beginEntryApproval.bind(this)}>Approve</button>
+                              className="btn btn-primary submitButton" onClick={this.beginEntryApproval}>Approve</button>
                         </div>
                         ) : (<div className="col-md-4"></div>)
                     }
@@ -142,10 +148,10 @@ class JournalEntry extends Component {
                 {
                     this.state.managementMode !== 0 ? (
                         <div className="flex-row memoForm">
-                            <input type="text" className="form-control" placeholder="Reason" style={{width: '400px' }} value={this.state.memo} onChange={this.changeMemo.bind(this)} />
+                            <input type="text" className="form-control" placeholder="Reason" style={{width: '400px' }} value={this.state.memo} onChange={this.changeMemo} />
                             <div className="flex-fill"></div>
-                            <button className="btn cancelButton" onClick={this.endEntryManagement.bind(this)}>Cancel</button>
-                            <button className="btn btn-primary submitButton"  onClick={this.delegateJournalEntryManagement.bind(this)}>Submit</button>
+                            <button className="btn cancelButton" onClick={this.endEntryManagement}>Cancel</button>
+                            <button className="btn btn-primary submitButton"  onClick={this.delegateJournalEntryManagement}>Submit</button>
                         </div>
                     ) : (
                         <div></div>

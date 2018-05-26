@@ -30,6 +30,9 @@ class GeneralJournalEntry extends Component {
 	            	});
 	            });
         }
+
+        this.approveJournalEntry = this.approveJournalEntry.bind(this);
+        this.rejectJournalEntry = this.rejectJournalEntry.bind(this);
     }
 
     render() {
@@ -57,7 +60,7 @@ class GeneralJournalEntry extends Component {
                     </div>
                     <div className="titleLine"></div>
                     {     
-                        <JournalEntry key={this.state.entry.date_created} entry={this.state.entry} onApprove={this.approveJournalEntry.bind(this)} onReject={this.rejectJournalEntry.bind(this)}/>
+                        <JournalEntry key={this.state.entry.date_created} entry={this.state.entry} onApprove={this.approveJournalEntry} onReject={this.rejectJournalEntry}/>
                             
                     }
                 </div>

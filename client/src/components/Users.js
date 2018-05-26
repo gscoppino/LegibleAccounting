@@ -20,6 +20,9 @@ class Users extends Component {
 
         this.searchTextChanged = this.searchTextChanged.bind(this);
         this.search = this.search.bind(this);
+        this.sortByUsername = this.sortByUsername.bind(this);
+        this.sortByGroupsName = this.sortByGroupsName.bind(this);
+        this.sortByIsActive = this.sortByIsActive.bind(this);
 
         UsersAPI.getAll()
             .then(data => {
@@ -60,15 +63,15 @@ class Users extends Component {
                         <tr>
                             <th className="username">Username <SortWidget
                               state={this.state.sortState.username}
-                              onClick={this.sortByUsername.bind(this)} />
+                              onClick={this.sortByUsername} />
                             </th>
                             <th className="type">Type <SortWidget
                               state={this.state.sortState.groups__name}
-                              onClick={this.sortByGroupsName.bind(this)} />
+                              onClick={this.sortByGroupsName} />
                             </th>
                             <th className="is_active">Active? <SortWidget
                               state={this.state.sortState.is_active}
-                              onClick={this.sortByIsActive.bind(this)} />
+                              onClick={this.sortByIsActive} />
                             </th>
                             <th className="edits"></th>
                         </tr>

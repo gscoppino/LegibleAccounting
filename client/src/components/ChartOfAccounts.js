@@ -23,6 +23,8 @@ class ChartOfAccounts extends Component {
 
 		this.searchTextChanged = this.searchTextChanged.bind(this);
     	this.search = this.search.bind(this);
+        this.sortByAccountNumber = this.sort.bind(this, 'accountNumber', ['account_type__order', 'order']);
+        this.sortByName = this.sort.bind(this, 'name');
 
         AccountsAPI.getAll(true)
         	.then(data => {
@@ -61,11 +63,11 @@ class ChartOfAccounts extends Component {
 					  	<tr>
 						    <th className="accountNumber"><div>Account</div>Number <SortWidget
                               state={this.state.sortState.accountNumber}
-                              onClick={this.sort.bind(this, 'accountNumber', ['account_type__order', 'order'])} />
+                              onClick={this.sortByAccountNumber} />
                             </th>
 						    <th className="name">Name <SortWidget
                               state={this.state.sortState.name}
-                              onClick={this.sort.bind(this, 'name')} />
+                              onClick={this.sortByName} />
                             </th>
                             <th className="accountType">Type</th>
                             <th className="accountTerm">Term</th>
