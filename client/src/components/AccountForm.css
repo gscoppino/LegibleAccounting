@@ -1,16 +1,5 @@
-.accountForm {
-	height: 100%;
-}
-
-.accountForm .createButton {
-	height: 35px;
-	width: 80px;
-	margin-left: 65px;
-	margin-top: 25px;
-}
-
 .accountForm .initialBalanceTextField {
-	width: 8em;
+	max-width: 8em;
 }
 
 .account-form-checkbox {
@@ -19,27 +8,10 @@
 }
 
 .accountForm .textBox {
-	width: 60em;
-}
-
-.textColumn {
-	float: left;
-	width: 310px;
-	padding: 5px 80px;
-	left: 10px;
-}
-
-.fieldColumn {
-	float: left;
-	width: 530px;
+	max-width: 36em;
 }
 
 .row {
-	height: 65px;
-}
-
-.container {
-	display: flex;
 	height: 65px;
 }
 
