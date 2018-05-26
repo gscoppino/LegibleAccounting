@@ -70,15 +70,15 @@ class AccountForm extends Component {
         }
 
         return (
-            <form className="accountForm" onSubmit={this.submitAccount}>
+            <form className="form-horizontal accountForm" onSubmit={this.submitAccount}>
                 <div className="titleBar">
                     <h1>{ this.state.accountModel.id === undefined ? 'Add' : 'Edit' } Account</h1>
                 </div>
-                <div className="row">
-					<div className="textColumn container">
+                <div className="form-group">
+					<label className="col-xs-12 col-sm-2 control-label">
 						Account Type
-					</div>
-					<div className="fieldColumn container">
+					</label>
+					<div className="col-xs-12 col-sm-10">
 						<select name="account_type" className="form-control textBox" value={this.state.accountModel.account_type} onChange={this.changeInputState}>
                             <option hidden>-- Select Account Type --</option>
 							{
@@ -89,11 +89,11 @@ class AccountForm extends Component {
 						</select>
 					</div>
 				</div>
-				<div className="row">
-					<div className="textColumn container">
+				<div className="form-group">
+					<label className="col-xs-12 col-sm-2 control-label">
 						Account Name
-					</div>
-					<div className="fieldColumn container">
+					</label>
+					<div className="col-xs-12 col-sm-10">
 						<input type="text"
 								name="name"
 								className="form-control textBox"
@@ -102,14 +102,14 @@ class AccountForm extends Component {
                                 onChange={this.changeInputState} />
 					</div>
 				</div>
-                <div className="row">
-                    <div className="textColumn container">
+                <div className="form-group">
+                    <label className="col-xs-12 col-sm-2 control-label">
                         Account Order
-                    </div>
-                    <div className="fieldColumn container">
+                    </label>
+                    <div className="col-xs-12 col-sm-10">
                         <input type="number"
                           name="order"
-                          className="form-control"
+                          className="form-control textBox"
                           placeholder="0"
                           step="1"
                           min="0"
@@ -117,11 +117,11 @@ class AccountForm extends Component {
                           onChange={this.changeInputState} />
                     </div>
                 </div>
-				<div className="row">
-					<div className="textColumn container">
+				<div className="form-group">
+					<label className="col-xs-12 col-sm-2 control-label">
 						Account Active
-					</div>
-					<div className="fieldColumn container">
+					</label>
+					<div className="col-xs-12 col-sm-10">
 						<input 	type="checkbox"
 								name="is_active"
 								className="account-form-checkbox"
@@ -131,11 +131,11 @@ class AccountForm extends Component {
                                 onChange={this.changeInputState} />
 					</div>
 				</div>
-                <div className="row">
-                    <div className="textColumn container">
+                <div className="form-group">
+                    <label className="col-xs-12 col-sm-2 control-label">
                         Is Contra Account
-                    </div>
-                    <div className="fieldColumn container">
+                    </label>
+                    <div className="col-xs-12 col-sm-10">
                         <input type="checkbox"
                           name="is_contra"
                           className="account-form-checkbox"
@@ -144,11 +144,11 @@ class AccountForm extends Component {
                           onChange={this.changeInputState} />
                     </div>
                 </div>
-				<div className="row">
-					<div className="textColumn container">
+				<div className="form-group">
+					<label className="col-xs-12 col-sm-2 control-label">
 						Initial Balance
-					</div>
-					<div className="fieldColumn container">
+					</label>
+					<div className="col-xs-12 col-sm-10">
 						<input	type="number"
 								name="initial_balance"
 								className="form-control initialBalanceTextField currency"
@@ -159,11 +159,11 @@ class AccountForm extends Component {
                                 onChange={this.changeInputState} />
 					</div>
 				</div>
-				<div className="row">
-					<div className="textColumn container">
+				<div className="form-group">
+					<label className="col-xs-12 col-sm-2 control-label">
 						Comments
-					</div>
-					<div className="fieldColumn container">
+					</label>
+					<div className="col-xs-12 col-sm-10">
 						<input 	type="text"
 								name="description"
 								className="form-control textBox"
@@ -172,11 +172,13 @@ class AccountForm extends Component {
                                 onChange={this.changeInputState} />
 					</div>
 				</div>
-				<div>
-					<input type="submit" value={ this.state.accountModel.id === undefined ? 'Create' : 'Update' } className="btn btn-primary createButton"/>
+				<div className="form-group">
+                    <div className="col-xs-12 col-sm-10 col-xs-offset-0 col-sm-offset-2">
+					   <input type="submit" value={ this.state.accountModel.id === undefined ? 'Create' : 'Update' } className="btn btn-primary createButton"/>
+                    </div>
 				</div>
 				<div>
-					<NavLink className="NavLink btn btn-primary backButton" to="/accounts">&lt; Back to Accounts</NavLink>
+					<NavLink className="btn btn-primary backButton" to="/accounts">&lt; Back to Accounts</NavLink>
 				</div>
             </form>
 		);
