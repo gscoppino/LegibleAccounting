@@ -15,13 +15,6 @@
 	height: 65px;
 }
 
-.fillSpace {
-	display: flex;
-	flex-direction: row;
-	flex-grow: 1;
-	height: 150px;
-}
-
 .accountForm .backButton {
 	margin-left: 65px;
 }
