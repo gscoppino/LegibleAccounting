@@ -6,7 +6,7 @@
     border-radius: 10px;
 }
 
-.title-heading {
+.retained-earnings-statement .title-heading {
 	background-color: var(--darkBlue);
 	border-radius: 5px;
 	color: white;
@@ -37,7 +37,7 @@
     padding: 12px;
 }
 
-.subjectTitle {
+.retained-earnings-statement .subjectTitle {
 	font-size: 16px;
 }
 

@@ -28,8 +28,13 @@ body {
 
 h1 {
 	color: var(--mainBlue);
+  margin-top: 0px;
+  margin-bottom: 0px;
 }
 
+.row {
+  height: 65px;
+}
 
 .flex-row {
   display: flex;
@@ -55,4 +60,50 @@ h1 {
 
 .full-height {
   height: 100%;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.glyphicon {
+    font-size: 13px;
+}
+
+.glyphiconButton {
+  width: 15px;
+  height: 15px;
+  margin-top: 2px;
+  margin-left: 10px;
+  background-color: transparent;
+}
+
+.Spacer {
+  margin: 8px;
+}
+
+.titleBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 20px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.titleBar .filler {
+  flex-grow: 1;
+}
+
+.backButton {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 100px;
+  margin-top: 30px;
 }

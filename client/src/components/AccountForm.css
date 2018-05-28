@@ -2,7 +2,7 @@
 	max-width: 8em;
 }
 
-.account-form-checkbox {
+.accountForm .account-form-checkbox {
 	height: 25px;
 	width: 25px;
 }
@@ -11,14 +11,10 @@
 	max-width: 36em;
 }
 
-.row {
-	height: 65px;
-}
-
 .accountForm .backButton {
 	margin-left: 65px;
 }
 
-input.currency {
+.accountForm input.currency {
     text-align: right;
 }

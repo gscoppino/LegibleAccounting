@@ -9,29 +9,25 @@
     padding-bottom: 80px;
   }
   
-  .Login-logo {
-    height: 160px;
-    margin-bottom: 20px;
-  }
+.Login .Login-logo {
+  height: 160px;
+  margin-bottom: 20px;
+}
 
-  .Spacer{
-    margin: 8px;
-  }
+.input {
+  width: 20em;
+  height: 40px;
+  border-radius: 6px;
+  border-style: none;
+  padding: 6px;
+}
 
-  .input{
-    width: 20em;
-    height: 40px;
-    border-radius: 6px;
-    border-style: none;
-    padding: 6px;
-  }
-
-  .button{
-    height: 40px;
-    border-radius: 6px;
-    padding: 6px;
-    background-color: var(--darkBlue);
-    border: 0px;
-    color: white;
-    width: 20em;
-  }
+.button {
+  height: 40px;
+  border-radius: 6px;
+  padding: 6px;
+  background-color: var(--darkBlue);
+  border: 0px;
+  color: white;
+  width: 20em;
+}

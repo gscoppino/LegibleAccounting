@@ -5,17 +5,69 @@
 	margin-bottom: 10px;
 }
 
-.fileInput {
+.journalEntryCreate .pad-file-input {
+	padding: 0.5em 0.5em 1em 0.5em;
+}
+
+.journalEntryCreate .accountEntryDropdown {
+	margin-right: 10px;
+	width: 50%;
+	height: 30px;
+}
+
+.journalEntryCreate .creditAccountEntryDropdown {
+	margin-left: 10%;
+}
+
+.journalEntryCreate .entryAmount {
+	width: 90px;
+	margin-bottom: 8px;
+	height: 30px;
+	text-align:right;
+	margin-left: 10px;
+}
+
+.journalEntryCreate .entryAmountWrapper {
+	display: flex;
+	flex-direction: row;
+}
+
+.journalEntryCreate .description {
+	resize: none;
+}
+
+.journalEntryCreate .descriptionWrapper {
+	display: flex;
+	flex-direction: row;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	width: 100%;
+	height: 100px;
+}
+
+.journalEntryCreate .textButton {
+	color: var(--mainBlue);
+	background:none;
+    border:none;
+    padding:0;
+    text-align: left;
+}
+
+.journalEntryCreate .textButton:hover {
+	color: var(--hoverBlue);
+}
+
+.journalEntryCreate .fileInput {
 	margin-top: 10px;
 	margin-bottom: 10px;
 	margin-left: -8px;
 }
 
-.typeSelect {
+.journalEntryCreate .typeSelect {
 	margin-top: 10px;
 }
 
-.debitCreditNotEqualWarning {
+.journalEntryCreate .debitCreditNotEqualWarning {
 	color: red;
 	margin-right: 18px;
 }

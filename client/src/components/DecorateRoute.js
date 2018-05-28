@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import './DecorateRoute.css';
 
 const DecorateRoute = (WrappedComponent, extraProps) => {
     return class extends Component {

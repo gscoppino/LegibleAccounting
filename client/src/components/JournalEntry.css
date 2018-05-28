@@ -10,13 +10,13 @@
 	border-bottom: 2px solid #EAEAEA;
 }
 
-.journalInfoWrapper {
+.journalEntry .journalInfoWrapper {
 	display: flex;
 	flex-direction: row;
 	margin-top: 10px;
 }
 
-.circle {
+.journalEntry .circle {
 	margin-top: 3px;
 	margin-left: 5px;  
     height:13px;
@@ -26,22 +26,22 @@
     -webkit-border-radius:50%;
 }
 
-.rejectedCircle {
+.journalEntry .rejectedCircle {
 	background-color: #D0011B;
     border:1px solid #AD0A0A;  
 }
 
-.approvedCircle {
+.journalEntry .approvedCircle {
 	background-color: #7ED321;
     border:1px solid #679C2D;  
 }
 
-.pendingCircle {
+.journalEntry .pendingCircle {
 	background-color: #F6A623;
     border:1px solid #C58419;  
 }
 
-.memoForm {
+.journalEntry .memoForm {
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 10px;
@@ -55,16 +55,11 @@
 	font-weight: 300;
 }
 
-.descriptionWrapperWrapper {
+.journalEntry .descriptionWrapperWrapper {
 	margin-top: 5px;
 }
 
-.descriptionWrapper {
-	display: flex;
-	flex-direction: row;
-}
-
-.amountEntry {
+.journalEntry .amountEntry {
 	display: flex;
 	direction: row;
 	font-weight: 300;
@@ -86,7 +81,7 @@
 	line-height: 20px;
 }
 
-.amountEntryValue {
+.journalEntry .amountEntryValue {
 	text-align: right;
 	width: 80px;
 }
@@ -99,42 +94,30 @@
 	overflow: hidden;
 }
 
-.transactionWrapper {
+.journalEntry .transactionWrapper {
 	margin-bottom: 5px;
 }
 
-.accountNameWrapper {
+.journalEntry .accountNameWrapper {
 	display: flex;
 	flex-direction: row;
 }
 
-.glyphiconButton {
-	width: 15px;
-	height: 15px;
-	margin-top: 2px;
-	margin-left: 10px;
-	background-color: transparent;
-}
-
-.attachment-name-overflow {
+.journalEntry .attachment-name-overflow {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
 
-.attachment-name-overflow a {
+.journalEntry .attachment-name-overflow a {
 	width: 400px;
 }
 
-.typeEntry {
+.journalEntry .typeEntry {
 	font-weight: 300;
 	color: #686868;
 }
 
 .dateEntry {
 	font-weight: 300;
-}
-
-.glyphicon {
-    font-size: 13px;
 }
