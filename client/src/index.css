@@ -74,14 +74,6 @@ input::-webkit-inner-spin-button {
     font-size: 13px;
 }
 
-.glyphiconButton {
-  width: 15px;
-  height: 15px;
-  margin-top: 2px;
-  margin-left: 10px;
-  background-color: transparent;
-}
-
 .Spacer {
   margin: 8px;
 }

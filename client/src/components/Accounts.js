@@ -109,7 +109,7 @@ class Accounts extends Component {
                                       </Popover>
                                   }>
                                     <span
-                                        className="glyphicon glyphicon-list-alt glyphiconButton"
+                                        className="glyphicon glyphicon-list-alt"
                                         style={{ visibility: item.description === "" && 'hidden' }}>
                                     </span>
                                 </OverlayTrigger></td>

@@ -16,9 +16,11 @@
 	margin-top: 10px;
 }
 
+.journalEntry .journalInfoWrapper > *:not(:first-child) {
+	margin-left: 10px;
+}
+
 .journalEntry .circle {
-	margin-top: 3px;
-	margin-left: 5px;  
     height:13px;
     width:13px;
     border-radius:50%;

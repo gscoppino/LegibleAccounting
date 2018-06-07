@@ -88,7 +88,7 @@ class JournalEntry extends Component {
                                       </Popover>
                                   )}>  
                                     <span
-                                        className="glyphicon glyphicon-paperclip glyphiconButton"
+                                        className="glyphicon glyphicon-paperclip"
                                         style={{display: !this.props.entry.receipts.length && 'none'}}>
                                     </span>  
                             </OverlayTrigger>
