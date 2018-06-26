@@ -23,11 +23,6 @@
 	overflow: hidden;
 }
 
-.actionButtonsWrapper {
-	justify-content: center;
-	align-items: center;
-}
-
 .cancelButton {
 	background-color: white;
 	color: var(--mainBlue);
