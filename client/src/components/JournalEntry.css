@@ -71,6 +71,12 @@
 	margin-bottom: 5px;
 }
 
+.journalEntry .actionButtonsWrapper button,
+.journalEntry .memoForm button {
+	width: 130px;
+	margin-right: 20px;
+}
+
 .journalEntry .amountEntryValue {
 	text-align: right;
 	width: 80px;

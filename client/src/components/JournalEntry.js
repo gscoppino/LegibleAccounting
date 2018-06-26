@@ -132,12 +132,12 @@ class JournalEntry extends Component {
                         this.state.managementMode === 0 ? (                        
                         <div className="col-md-4 actionButtonsWrapper flex-row">
                             <div className="flex-fill"></div>
-                            <button className="btn cancelButton submitButton"
+                            <button className="btn btn-success"
                               style={{ display: (!(Auth.currentUserIsManager()) || !(this.props.entry.is_approved === null)) && 'none' }}
                               onClick={this.beginEntryRejection}>Reject</button>
                             <button
                               style={{ display: (!(Auth.currentUserIsManager()) || !(this.props.entry.is_approved === null)) && 'none' }}
-                              className="btn btn-primary submitButton" onClick={this.beginEntryApproval}>Approve</button>
+                              className="btn btn-primary" onClick={this.beginEntryApproval}>Approve</button>
                         </div>
                         ) : (<div className="col-md-4"></div>)
                     }
@@ -147,8 +147,8 @@ class JournalEntry extends Component {
                         <div className="flex-row memoForm">
                             <input type="text" className="form-control" placeholder="Reason" style={{width: '400px' }} value={this.state.memo} onChange={this.changeMemo} />
                             <div className="flex-fill"></div>
-                            <button className="btn cancelButton" onClick={this.endEntryManagement}>Cancel</button>
-                            <button className="btn btn-primary submitButton"  onClick={this.delegateJournalEntryManagement}>Submit</button>
+                            <button className="btn btn-success" onClick={this.endEntryManagement}>Cancel</button>
+                            <button className="btn btn-primary"  onClick={this.delegateJournalEntryManagement}>Submit</button>
                         </div>
                     ) : (
                         <div></div>

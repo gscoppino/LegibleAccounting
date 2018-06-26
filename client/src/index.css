@@ -25,6 +25,19 @@ body {
 	background-color: var(--hoverBlue);
 }
 
+.btn.btn-success {
+  background-color: white;
+  color: var(--mainBlue);
+  border-color: var(--mainBlue);
+}
+
+.btn.btn-success:hover,
+.btn.btn-success:active {
+  background-color: #eee;
+  color: var(--hoverBlue);
+  border-color: var(--hoverBlue);
+}
+
 h1 {
 	color: var(--mainBlue);
   margin-top: 0px;

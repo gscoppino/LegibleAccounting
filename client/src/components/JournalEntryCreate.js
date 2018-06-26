@@ -139,8 +139,8 @@ class JournalEntryCreate extends Component {
                         </div>
                         <div className="actionButtonsWrapper flex-row">
                             <div className="flex-fill"></div>
-                            <button className="btn cancelButton submitButton" onClick={this.props.onCancel}>Cancel</button>
-                            <button className="btn btn-primary submitButton" disabled={!this.journalIsBalanced()} onClick={this.delegateJournalEntrySubmission}>Submit</button>
+                            <button className="btn btn-success" onClick={this.props.onCancel}>Cancel</button>
+                            <button className="btn btn-primary" disabled={!this.journalIsBalanced()} onClick={this.delegateJournalEntrySubmission}>Submit</button>
                         </div>
                     </div>
                 </div>

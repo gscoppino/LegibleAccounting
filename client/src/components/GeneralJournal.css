@@ -22,19 +22,3 @@
 .bottomOfEntryWrapper {
 	overflow: hidden;
 }
-
-.cancelButton {
-	background-color: white;
-	color: var(--mainBlue);
-	border-color: var(--mainBlue);
-	margin-right: 20px;
-}
-
-.cancelButton:hover{
-	color: var(--hoverBlue);
-	border-color: var(--hoverBlue);
-}
-
-.submitButton {
-	width: 130px;
-}
