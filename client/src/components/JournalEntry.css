@@ -82,7 +82,7 @@
 	width: 80px;
 }
 
-.accountName {
+.journalEntry .accountName {
 	font-weight: bold;
 	height: 20px;
 	white-space: nowrap;
