@@ -131,7 +131,7 @@ class JournalEntryCreate extends Component {
                         }
                       </div>
                 </div>
-                <div className="row row-auto-resize bottomOfEntryWrapper">
+                <div className="row row-auto-resize">
                     <div className="col-md-12">
                         <div className="flex-row" style={{visibility: this.journalIsBalanced() && 'hidden'}}>
                             <div className="flex-fill"></div>

@@ -122,7 +122,7 @@ class JournalEntry extends Component {
                       </div>
                 </div>
                 
-                <div className="row row-auto-resize bottomOfEntryWrapper">
+                <div className="row row-auto-resize">
                     <div className="col-md-offset-4 col-md-4 descriptionWrapperWrapper">
                         <div className="description">
                             <strong>Description: </strong>{this.props.entry.description}
