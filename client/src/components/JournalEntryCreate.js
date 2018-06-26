@@ -75,7 +75,7 @@ class JournalEntryCreate extends Component {
                     <label className="hidden-xs col-sm-2">Debit</label>
                     <label className="hidden-xs col-sm-2">Credit</label>
                 </div>
-                <div className="titleLine"></div>
+                <hr />
                 <div className="row topOfEntryWrapper">
                     <div className="col-xs-12 col-sm-4 dateEntry">
                         <DateTime renderInput={this.renderDatePickerField} timeFormat={false} dateFormat="YYYY-MM-DD" value={this.state.date} onChange={this.changeDate} onBlur={this.setCalendarClosed}/>

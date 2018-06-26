@@ -98,3 +98,9 @@ input::-webkit-inner-spin-button {
   margin-bottom: 100px;
   margin-top: 30px;
 }
+
+hr {
+  border-top: 2px solid #D7D6D7;
+  margin-top: 10px;
+  margin-bottom: 0;
+}
