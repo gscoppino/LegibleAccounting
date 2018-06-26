@@ -19,6 +19,15 @@
 	margin-top: 1rem;
 }
 
+.retained-earnings-statement .accountNameCol {
+	width: 80%;
+}
+
+.retained-earnings-statement .debitCol,
+.retained-earnings-statement .creditCol {
+    min-width: 10rem;
+}
+
 .retained-earnings-statement .business-name {
 	font-size: 26px;
     margin-top: 1rem;
@@ -41,7 +50,7 @@
 	font-size: 16px;
 }
 
-.total {
+.retained-earnings-statement .total {
 	text-decoration: overline;
 	padding-bottom: 1px;
 	border-bottom: double 5px;

@@ -19,6 +19,15 @@
     margin-top: 1rem;
 }
 
+.balance-sheet .accountNameCol {
+	width: 80%;
+}
+
+.balance-sheet .debitCol,
+.balance-sheet .creditCol {
+    min-width: 10rem;
+}
+
 .balance-sheet .data-heading {
     margin-top: 0px;
     margin-left: 50px;

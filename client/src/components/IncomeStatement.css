@@ -36,11 +36,12 @@
 	color: var(--mainBlue);
 }
 
-.accountNameCol {
+.income-statement .accountNameCol {
 	width: 80%;
 }
 
-.debitCol, .creditCol {
+.income-statement .debitCol,
+.income-statement .creditCol {
     min-width: 10rem;
 }
 
@@ -48,7 +49,7 @@
 	text-decoration: overline underline;
 }
 
-.total {
+.income-statement .total {
 	text-decoration: overline;
 	padding-bottom: 1px;
 	border-bottom: double 5px;

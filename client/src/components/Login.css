@@ -14,7 +14,7 @@
   margin-bottom: 20px;
 }
 
-.input {
+.Login .input {
   width: 20em;
   height: 40px;
   border-radius: 6px;
@@ -22,7 +22,7 @@
   padding: 6px;
 }
 
-.button {
+.Login .button {
   height: 40px;
   border-radius: 6px;
   padding: 6px;
