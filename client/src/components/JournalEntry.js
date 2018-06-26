@@ -113,10 +113,7 @@ class JournalEntry extends Component {
                                     </div>
                                     <div className={ 'amountEntry col-xs-12 ' +
                                       (item.is_debit ? 'col-sm-6' : 'col-sm-3 col-sm-offset-3')}>
-                                        <label
-                                          className={ item.is_debit ? 'dollarSignDebit' : 'dollarSignCredit' }
-                                          style={{visibility: item.typeIndex !== 0 && 'hidden'}}>$
-                                        </label>
+                                        <label style={{visibility: item.typeIndex !== 0 && 'hidden'}}>$</label>
                                         <div className="amountEntryValue">{item.value}</div>
                                     </div>
                                 </div>

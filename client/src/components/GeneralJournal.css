@@ -23,18 +23,6 @@
 	overflow: hidden;
 }
 
-.dollarSignDebit {
-	font-size: 14px;
-	height: 100%;
-	line-height: 30px;
-}
-
-.dollarSignCredit {
-	font-size: 14px;
-	height: 100%;
-	line-height: 30px;
-}
-
 .actionButtonsWrapper {
 	justify-content: center;
 	align-items: center;

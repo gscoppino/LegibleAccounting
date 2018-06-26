@@ -71,18 +71,6 @@
 	margin-bottom: 5px;
 }
 
-.journalEntry .dollarSignDebit {
-	font-size: 14px;
-	height: 100%;
-	line-height: 20px;
-}
-
-.journalEntry .dollarSignCredit {
-	font-size: 14px;
-	height: 100%;
-	line-height: 20px;
-}
-
 .journalEntry .amountEntryValue {
 	text-align: right;
 	width: 80px;
