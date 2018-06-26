@@ -39,6 +39,10 @@ h1 {
     height: 15px;
 }
 
+.row.row-auto-resize {
+  height: auto;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

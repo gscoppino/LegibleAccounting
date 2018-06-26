@@ -103,7 +103,7 @@ class JournalEntry extends Component {
                     <div className="col-xs-12 col-sm-8 largeWrapper">
                         {
                             this.props.entry.transactions.map((item, index) => (
-                                <div className="row auto-height transactionWrapper" key={item.affected_account.id}>
+                                <div className="row row-auto-resize transactionWrapper" key={item.affected_account.id}>
                                     <div className="col-xs-12 col-sm-6">
                                         <div className={"accountNameWrapper " + (item.is_debit ? '' : 'creditAccountEntry')}>
                                             <div className="accountName">

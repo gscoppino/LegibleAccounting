@@ -99,7 +99,7 @@ class JournalEntryCreate extends Component {
                     <div className="col-xs-12 col-sm-8">
                         {
                             this.state.transactions.map((item, index) => (
-                                <div className="row auto-height" key={item.key}>
+                                <div className="row row-auto-resize new-transaction-wrapper" key={item.key}>
                                     <div className="col-xs-12 col-sm-6">
                                         <div className="flex-row flex-v-center">
                                             <select
