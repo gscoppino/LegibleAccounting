@@ -134,7 +134,7 @@ class GeneralJournal extends Component {
                             </NavItem>
                         </Nav>
                     </div>
-                    <div className="row gridHeading">
+                    <div className="row heading-row">
                         <label className="hidden-xs col-sm-2"></label>
                         <label className="hidden-xs col-sm-1">Type</label>
                         <label className="hidden-xs col-sm-1">Creator</label>
@@ -142,7 +142,7 @@ class GeneralJournal extends Component {
                         <label className="hidden-xs col-sm-2">Debit</label>
                         <label className="hidden-xs col-sm-2">Credit</label>
                     </div>
-                    <div className="titleLine"></div>
+                    <hr />
                     {
                         (!this.state.isCreatingJournalEntry && (!this.state.entries || this.state.entries.length === 0)) &&
                             (<h2 className="text-center pad">No Journal Entries exist.</h2>)

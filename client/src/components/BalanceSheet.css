@@ -6,7 +6,7 @@
     border-radius: 10px;
 }
 
-.title-heading {
+.balance-sheet .title-heading {
 	background-color: var(--darkBlue);
 	border-radius: 5px;
 	color: white;
@@ -19,23 +19,32 @@
     margin-top: 1rem;
 }
 
-.data-heading {
+.balance-sheet .accountNameCol {
+	width: 80%;
+}
+
+.balance-sheet .debitCol,
+.balance-sheet .creditCol {
+    min-width: 10rem;
+}
+
+.balance-sheet .data-heading {
     margin-top: 0px;
     margin-left: 50px;
 	font-size: 20px;
 	color: var(--mainBlue);
 }
 
-.data-subheading {
+.balance-sheet .data-subheading {
 	padding-left: 30px;
 }
 
-.data-total {
+.balance-sheet .data-total {
 	text-decoration: underline overline;
 	font-weight: 600;
 }
 
-.data-row {
+.balance-sheet .data-row {
 	padding-left: 45px;
 }
 
@@ -49,6 +58,6 @@
     margin-top: 1rem;
 }
 
-.balance-sheet-table {
+.balance-sheet .balance-sheet-table {
 	width: 90%;
 }

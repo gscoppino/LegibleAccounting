@@ -12,7 +12,7 @@
     margin-bottom: 10px;
 }
 
-.sidebar-logo {
+.Sidebar .sidebar-logo {
     width: 280px;
 }
 
@@ -25,27 +25,27 @@
     background-color: var(--darkBlue);
 }
 
-.stack {
+.Sidebar .stack {
     font-size: 17px;
     overflow-y: auto;
 }
 
-.user-logo {
+.Sidebar .user-logo {
     width: 50px;
 }
 
-.userText {
+.Sidebar .userText {
     margin-top: 10px;
     font-size: 16px;
     font-weight: 200;
 }
 
-.user-heading {
+.Sidebar .user-heading {
     margin-top: 10px;
     margin-bottom: 10px;
 }
 
-.logoutButton {
+.Sidebar .logoutButton {
     margin-bottom: 0px;
 }
 

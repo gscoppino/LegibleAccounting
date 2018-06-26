@@ -24,9 +24,9 @@ class JournalEntry extends Component {
     render() {
         return (
             <div className="journalEntry">
-                <div className="row topOfEntryWrapper">
+                <div className="row row-auto-resize">
                     <div className="col-xs-12 col-sm-2">
-                        <div className="dateEntry"> {this.props.entry.date} </div>
+                        <div> {this.props.entry.date} </div>
                         <div className="journalInfoWrapper">
                             <OverlayTrigger
                                   trigger="click"
@@ -88,7 +88,7 @@ class JournalEntry extends Component {
                                       </Popover>
                                   )}>  
                                     <span
-                                        className="glyphicon glyphicon-paperclip glyphiconButton"
+                                        className="glyphicon glyphicon-paperclip"
                                         style={{display: !this.props.entry.receipts.length && 'none'}}>
                                     </span>  
                             </OverlayTrigger>
@@ -103,7 +103,7 @@ class JournalEntry extends Component {
                     <div className="col-xs-12 col-sm-8 largeWrapper">
                         {
                             this.props.entry.transactions.map((item, index) => (
-                                <div className="row auto-height transactionWrapper" key={item.affected_account.id}>
+                                <div className="row row-auto-resize transactionWrapper" key={item.affected_account.id}>
                                     <div className="col-xs-12 col-sm-6">
                                         <div className={"accountNameWrapper " + (item.is_debit ? '' : 'creditAccountEntry')}>
                                             <div className="accountName">
@@ -113,10 +113,7 @@ class JournalEntry extends Component {
                                     </div>
                                     <div className={ 'amountEntry col-xs-12 ' +
                                       (item.is_debit ? 'col-sm-6' : 'col-sm-3 col-sm-offset-3')}>
-                                        <label
-                                          className={ item.is_debit ? 'dollarSignDebit' : 'dollarSignCredit' }
-                                          style={{visibility: item.typeIndex !== 0 && 'hidden'}}>$
-                                        </label>
+                                        <label style={{visibility: item.typeIndex !== 0 && 'hidden'}}>$</label>
                                         <div className="amountEntryValue">{item.value}</div>
                                     </div>
                                 </div>
@@ -125,9 +122,9 @@ class JournalEntry extends Component {
                       </div>
                 </div>
                 
-                <div className="row bottomOfEntryWrapper">
+                <div className="row row-auto-resize">
                     <div className="col-md-offset-4 col-md-4 descriptionWrapperWrapper">
-                        <div className="description">
+                        <div>
                             <strong>Description: </strong>{this.props.entry.description}
                         </div>
                     </div>
@@ -135,12 +132,12 @@ class JournalEntry extends Component {
                         this.state.managementMode === 0 ? (                        
                         <div className="col-md-4 actionButtonsWrapper flex-row">
                             <div className="flex-fill"></div>
-                            <button className="btn cancelButton submitButton"
+                            <button className="btn btn-success"
                               style={{ display: (!(Auth.currentUserIsManager()) || !(this.props.entry.is_approved === null)) && 'none' }}
                               onClick={this.beginEntryRejection}>Reject</button>
                             <button
                               style={{ display: (!(Auth.currentUserIsManager()) || !(this.props.entry.is_approved === null)) && 'none' }}
-                              className="btn btn-primary submitButton" onClick={this.beginEntryApproval}>Approve</button>
+                              className="btn btn-primary" onClick={this.beginEntryApproval}>Approve</button>
                         </div>
                         ) : (<div className="col-md-4"></div>)
                     }
@@ -150,8 +147,8 @@ class JournalEntry extends Component {
                         <div className="flex-row memoForm">
                             <input type="text" className="form-control" placeholder="Reason" style={{width: '400px' }} value={this.state.memo} onChange={this.changeMemo} />
                             <div className="flex-fill"></div>
-                            <button className="btn cancelButton" onClick={this.endEntryManagement}>Cancel</button>
-                            <button className="btn btn-primary submitButton"  onClick={this.delegateJournalEntryManagement}>Submit</button>
+                            <button className="btn btn-success" onClick={this.endEntryManagement}>Cancel</button>
+                            <button className="btn btn-primary"  onClick={this.delegateJournalEntryManagement}>Submit</button>
                         </div>
                     ) : (
                         <div></div>

@@ -104,12 +104,12 @@ class Accounts extends Component {
                                       <Popover id="popover-trigger-click-root-close" title="Comments">
                                         {
 
-                                            <div className="description">{item.description}</div>
+                                            <div>{item.description}</div>
                                         }
                                       </Popover>
                                   }>
                                     <span
-                                        className="glyphicon glyphicon-list-alt glyphiconButton"
+                                        className="glyphicon glyphicon-list-alt"
                                         style={{ visibility: item.description === "" && 'hidden' }}>
                                     </span>
                                 </OverlayTrigger></td>

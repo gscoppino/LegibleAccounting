@@ -50,7 +50,7 @@ class GeneralJournalEntry extends Component {
                     <h1>Entry # {this.state.entry.id}</h1>
                 </div>
                 <div>
-                    <div className="row gridHeading">
+                    <div className="row heading-row">
                         <label className="hidden-xs col-sm-2"></label>
                         <label className="hidden-xs col-sm-1">Type</label>
                         <label className="hidden-xs col-sm-1">Creator</label>
@@ -58,7 +58,7 @@ class GeneralJournalEntry extends Component {
                         <label className="hidden-xs col-sm-2">Debit</label>
                         <label className="hidden-xs col-sm-2">Credit</label>
                     </div>
-                    <div className="titleLine"></div>
+                    <hr />
                     {     
                         <JournalEntry key={this.state.entry.date_created} entry={this.state.entry} onApprove={this.approveJournalEntry} onReject={this.rejectJournalEntry}/>
                             

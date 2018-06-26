@@ -45,7 +45,7 @@ class TrialBalance extends Component {
                     <table className="table table-hover">
                       <thead>
                         <tr>
-                            <th className="accountName">Account</th>
+                            <th>Account</th>
                             <th className="debitCol text-right">Debit</th>
                             <th className="creditCol text-right">Credit</th>
                         </tr>

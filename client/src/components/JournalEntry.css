@@ -3,22 +3,24 @@
 }
 
 .journalEntry {
-	padding: 5px 0;
+	padding: 15px 0 5px 0;
 }
 
 .journalEntry:not(:last-of-type) {
 	border-bottom: 2px solid #EAEAEA;
 }
 
-.journalInfoWrapper {
+.journalEntry .journalInfoWrapper {
 	display: flex;
 	flex-direction: row;
 	margin-top: 10px;
 }
 
-.circle {
-	margin-top: 3px;
-	margin-left: 5px;  
+.journalEntry .journalInfoWrapper > *:not(:first-child) {
+	margin-left: 10px;
+}
+
+.journalEntry .circle {
     height:13px;
     width:13px;
     border-radius:50%;
@@ -26,45 +28,36 @@
     -webkit-border-radius:50%;
 }
 
-.rejectedCircle {
+.journalEntry .rejectedCircle {
 	background-color: #D0011B;
     border:1px solid #AD0A0A;  
 }
 
-.approvedCircle {
+.journalEntry .approvedCircle {
 	background-color: #7ED321;
     border:1px solid #679C2D;  
 }
 
-.pendingCircle {
+.journalEntry .pendingCircle {
 	background-color: #F6A623;
     border:1px solid #C58419;  
 }
 
-.memoForm {
+.journalEntry .memoForm {
 	margin-left: 10px;
 	margin-right: 10px;
 	margin-bottom: 10px;
 }
 
-.creditAccountEntry {
+.journalEntry .creditAccountEntry {
 	margin-left: 40px;
 }
 
-.description {
-	font-weight: 300;
-}
-
-.descriptionWrapperWrapper {
+.journalEntry .descriptionWrapperWrapper {
 	margin-top: 5px;
 }
 
-.descriptionWrapper {
-	display: flex;
-	flex-direction: row;
-}
-
-.amountEntry {
+.journalEntry .amountEntry {
 	display: flex;
 	direction: row;
 	font-weight: 300;
@@ -74,24 +67,18 @@
 	margin-bottom: 5px;
 }
 
-.journalEntry .dollarSignDebit {
-	font-size: 14px;
-	height: 100%;
-	line-height: 20px;
+.journalEntry .actionButtonsWrapper button,
+.journalEntry .memoForm button {
+	width: 130px;
+	margin-right: 20px;
 }
 
-.journalEntry .dollarSignCredit {
-	font-size: 14px;
-	height: 100%;
-	line-height: 20px;
-}
-
-.amountEntryValue {
+.journalEntry .amountEntryValue {
 	text-align: right;
 	width: 80px;
 }
 
-.accountName {
+.journalEntry .accountName {
 	font-weight: bold;
 	height: 20px;
 	white-space: nowrap;
@@ -99,42 +86,26 @@
 	overflow: hidden;
 }
 
-.transactionWrapper {
+.journalEntry .transactionWrapper {
 	margin-bottom: 5px;
 }
 
-.accountNameWrapper {
+.journalEntry .accountNameWrapper {
 	display: flex;
 	flex-direction: row;
 }
 
-.glyphiconButton {
-	width: 15px;
-	height: 15px;
-	margin-top: 2px;
-	margin-left: 10px;
-	background-color: transparent;
-}
-
-.attachment-name-overflow {
+.journalEntry .attachment-name-overflow {
 	white-space: nowrap;
 	text-overflow: ellipsis;
 	overflow: hidden;
 }
 
-.attachment-name-overflow a {
+.journalEntry .attachment-name-overflow a {
 	width: 400px;
 }
 
-.typeEntry {
+.journalEntry .typeEntry {
 	font-weight: 300;
 	color: #686868;
-}
-
-.dateEntry {
-	font-weight: 300;
-}
-
-.glyphicon {
-    font-size: 13px;
 }

@@ -6,7 +6,7 @@
     border-radius: 10px;
 }
 
-.title-heading {
+.retained-earnings-statement .title-heading {
 	background-color: var(--darkBlue);
 	border-radius: 5px;
 	color: white;
@@ -17,6 +17,15 @@
 .retained-earnings-statement .income-statement-main-heading {
 	font-size: 18px;
 	margin-top: 1rem;
+}
+
+.retained-earnings-statement .accountNameCol {
+	width: 80%;
+}
+
+.retained-earnings-statement .debitCol,
+.retained-earnings-statement .creditCol {
+    min-width: 10rem;
 }
 
 .retained-earnings-statement .business-name {
@@ -37,11 +46,11 @@
     padding: 12px;
 }
 
-.subjectTitle {
+.retained-earnings-statement .subjectTitle {
 	font-size: 16px;
 }
 
-.total {
+.retained-earnings-statement .total {
 	text-decoration: overline;
 	padding-bottom: 1px;
 	border-bottom: double 5px;

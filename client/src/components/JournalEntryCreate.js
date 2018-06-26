@@ -69,15 +69,15 @@ class JournalEntryCreate extends Component {
 
         return (
             <div className="journalEntryCreate">
-                <div className="row gridHeading">
+                <div className="row heading-row">
                     <label className="hidden-xs col-sm-4">New Journal Entry</label>
                     <label className="hidden-xs col-sm-4">Accounts</label>
                     <label className="hidden-xs col-sm-2">Debit</label>
                     <label className="hidden-xs col-sm-2">Credit</label>
                 </div>
-                <div className="titleLine"></div>
-                <div className="row topOfEntryWrapper">
-                    <div className="col-xs-12 col-sm-4 dateEntry">
+                <hr />
+                <div className="row row-auto-resize topOfEntryWrapper">
+                    <div className="col-xs-12 col-sm-4">
                         <DateTime renderInput={this.renderDatePickerField} timeFormat={false} dateFormat="YYYY-MM-DD" value={this.state.date} onChange={this.changeDate} onBlur={this.setCalendarClosed}/>
                         <select className="form-control typeSelect"
                           value={this.state.entry_type}
@@ -99,7 +99,7 @@ class JournalEntryCreate extends Component {
                     <div className="col-xs-12 col-sm-8">
                         {
                             this.state.transactions.map((item, index) => (
-                                <div className="row auto-height" key={item.key}>
+                                <div className="row row-auto-resize new-transaction-wrapper" key={item.key}>
                                     <div className="col-xs-12 col-sm-6">
                                         <div className="flex-row flex-v-center">
                                             <select
@@ -120,7 +120,7 @@ class JournalEntryCreate extends Component {
                                     </div>
                                     <div className={ 'col-xs-12 ' + (item.is_debit ? 'col-sm-6' : 'col-sm-3 col-sm-offset-3') }>
                                         <div className="entryAmountWrapper">
-                                            <label className={ item.is_debit ? 'dollarSignDebit' : 'dollarSignCredit' } style={{visibility: !item.initial_display && 'hidden'}}>$</label>
+                                            <label className="dollarSign" style={{visibility: !item.initial_display && 'hidden'}}>$</label>
                                             <input type="number" className="form-control entryAmount" placeholder="0.00"
                                               value={item.amount}
                                               onChange={(event) => this.accountAmountOnChange(event, index)}/>
@@ -131,7 +131,7 @@ class JournalEntryCreate extends Component {
                         }
                       </div>
                 </div>
-                <div className="row bottomOfEntryWrapper">
+                <div className="row row-auto-resize">
                     <div className="col-md-12">
                         <div className="flex-row" style={{visibility: this.journalIsBalanced() && 'hidden'}}>
                             <div className="flex-fill"></div>
@@ -139,8 +139,8 @@ class JournalEntryCreate extends Component {
                         </div>
                         <div className="actionButtonsWrapper flex-row">
                             <div className="flex-fill"></div>
-                            <button className="btn cancelButton submitButton" onClick={this.props.onCancel}>Cancel</button>
-                            <button className="btn btn-primary submitButton" disabled={!this.journalIsBalanced()} onClick={this.delegateJournalEntrySubmission}>Submit</button>
+                            <button className="btn btn-success" onClick={this.props.onCancel}>Cancel</button>
+                            <button className="btn btn-primary" disabled={!this.journalIsBalanced()} onClick={this.delegateJournalEntrySubmission}>Submit</button>
                         </div>
                     </div>
                 </div>

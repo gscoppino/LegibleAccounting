@@ -3,7 +3,6 @@
   --darkBlue: #3D7AC1;
   --hoverBlue: #3986DF;
   --tableWidth: 90%;
-  --journalEntryAccountMarginBottom: 8px;
 }
 
 html, body, #root {
@@ -26,10 +25,36 @@ body {
 	background-color: var(--hoverBlue);
 }
 
-h1 {
-	color: var(--mainBlue);
+.btn.btn-success {
+  background-color: white;
+  color: var(--mainBlue);
+  border-color: var(--mainBlue);
 }
 
+.btn.btn-success:hover,
+.btn.btn-success:active {
+  background-color: #eee;
+  color: var(--hoverBlue);
+  border-color: var(--hoverBlue);
+}
+
+h1 {
+	color: var(--mainBlue);
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.row {
+  height: 65px;
+}
+
+.row.heading-row {
+    height: 15px;
+}
+
+.row.row-auto-resize {
+  height: auto;
+}
 
 .flex-row {
   display: flex;
@@ -55,4 +80,48 @@ h1 {
 
 .full-height {
   height: 100%;
+}
+
+input[type='number'] {
+    -moz-appearance:textfield;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+
+.glyphicon {
+    font-size: 13px;
+}
+
+.Spacer {
+  margin: 8px;
+}
+
+.titleBar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 3rem;
+  margin-bottom: 20px;
+  margin-left: 3rem;
+  margin-right: 3rem;
+}
+
+.titleBar .filler {
+  flex-grow: 1;
+}
+
+.backButton {
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 100px;
+  margin-top: 30px;
+}
+
+hr {
+  border-top: 2px solid #D7D6D7;
+  margin-top: 10px;
+  margin-bottom: 0;
 }

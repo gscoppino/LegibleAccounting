@@ -39,7 +39,7 @@ class RetainedEarningsStatement extends Component {
                     <div className="as-of-date ">For the period ending {moment(this.state.data.as_of_date).format('MMMM Do, YYYY')}</div>
                 </div>
                 <div className="tableWrapper">
-                    <table className="table balance-sheet-table">
+                    <table className="table retained-earnings-statement-table">
                         <thead>
                             <tr>
                                 <th className="accountNameCol"></th>
