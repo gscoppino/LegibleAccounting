@@ -35,6 +35,10 @@ h1 {
   height: 65px;
 }
 
+.row.heading-row {
+    height: 15px;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

@@ -69,7 +69,7 @@ class JournalEntryCreate extends Component {
 
         return (
             <div className="journalEntryCreate">
-                <div className="row gridHeading">
+                <div className="row heading-row">
                     <label className="hidden-xs col-sm-4">New Journal Entry</label>
                     <label className="hidden-xs col-sm-4">Accounts</label>
                     <label className="hidden-xs col-sm-2">Debit</label>

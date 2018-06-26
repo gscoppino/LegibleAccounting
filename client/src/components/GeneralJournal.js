@@ -134,7 +134,7 @@ class GeneralJournal extends Component {
                             </NavItem>
                         </Nav>
                     </div>
-                    <div className="row gridHeading">
+                    <div className="row heading-row">
                         <label className="hidden-xs col-sm-2"></label>
                         <label className="hidden-xs col-sm-1">Type</label>
                         <label className="hidden-xs col-sm-1">Creator</label>
