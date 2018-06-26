@@ -3,7 +3,8 @@
 	margin-bottom: 15px;
 }
 
-.date-left-margin {
+.generalJournal .date-left-margin,
+.journalEntryCreate .date-left-margin {
 	margin-left: 0.25em;
 }
 
