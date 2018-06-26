@@ -26,7 +26,7 @@ class JournalEntry extends Component {
             <div className="journalEntry">
                 <div className="row row-auto-resize">
                     <div className="col-xs-12 col-sm-2">
-                        <div className="dateEntry"> {this.props.entry.date} </div>
+                        <div> {this.props.entry.date} </div>
                         <div className="journalInfoWrapper">
                             <OverlayTrigger
                                   trigger="click"

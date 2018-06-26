@@ -77,7 +77,7 @@ class JournalEntryCreate extends Component {
                 </div>
                 <hr />
                 <div className="row row-auto-resize topOfEntryWrapper">
-                    <div className="col-xs-12 col-sm-4 dateEntry">
+                    <div className="col-xs-12 col-sm-4">
                         <DateTime renderInput={this.renderDatePickerField} timeFormat={false} dateFormat="YYYY-MM-DD" value={this.state.date} onChange={this.changeDate} onBlur={this.setCalendarClosed}/>
                         <select className="form-control typeSelect"
                           value={this.state.entry_type}
