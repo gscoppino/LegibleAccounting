@@ -49,12 +49,8 @@
 	margin-bottom: 10px;
 }
 
-.creditAccountEntry {
+.journalEntry .creditAccountEntry {
 	margin-left: 40px;
-}
-
-.description {
-	font-weight: 300;
 }
 
 .journalEntry .descriptionWrapperWrapper {

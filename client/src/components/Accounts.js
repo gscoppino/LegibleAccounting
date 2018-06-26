@@ -104,7 +104,7 @@ class Accounts extends Component {
                                       <Popover id="popover-trigger-click-root-close" title="Comments">
                                         {
 
-                                            <div className="description">{item.description}</div>
+                                            <div>{item.description}</div>
                                         }
                                       </Popover>
                                   }>
