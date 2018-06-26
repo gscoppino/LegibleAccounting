@@ -5,6 +5,10 @@
 	margin-bottom: 10px;
 }
 
+.journalEntryCreate .topOfEntryWrapper {
+	margin-top: 10px;
+}
+
 .journalEntryCreate .pad-file-input {
 	padding: 0.5em 0.5em 1em 0.5em;
 }
