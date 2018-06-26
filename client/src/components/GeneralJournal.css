@@ -17,11 +17,9 @@
 
 .topOfEntryWrapper {
 	margin-top: 10px;
-	height: auto;
 }
 
 .bottomOfEntryWrapper {
-	height: auto;
 	overflow: hidden;
 }
 

@@ -76,7 +76,7 @@ class JournalEntryCreate extends Component {
                     <label className="hidden-xs col-sm-2">Credit</label>
                 </div>
                 <hr />
-                <div className="row topOfEntryWrapper">
+                <div className="row row-auto-resize topOfEntryWrapper">
                     <div className="col-xs-12 col-sm-4 dateEntry">
                         <DateTime renderInput={this.renderDatePickerField} timeFormat={false} dateFormat="YYYY-MM-DD" value={this.state.date} onChange={this.changeDate} onBlur={this.setCalendarClosed}/>
                         <select className="form-control typeSelect"
@@ -131,7 +131,7 @@ class JournalEntryCreate extends Component {
                         }
                       </div>
                 </div>
-                <div className="row bottomOfEntryWrapper">
+                <div className="row row-auto-resize bottomOfEntryWrapper">
                     <div className="col-md-12">
                         <div className="flex-row" style={{visibility: this.journalIsBalanced() && 'hidden'}}>
                             <div className="flex-fill"></div>

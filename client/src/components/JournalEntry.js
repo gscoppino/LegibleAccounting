@@ -24,7 +24,7 @@ class JournalEntry extends Component {
     render() {
         return (
             <div className="journalEntry">
-                <div className="row topOfEntryWrapper">
+                <div className="row row-auto-resize topOfEntryWrapper">
                     <div className="col-xs-12 col-sm-2">
                         <div className="dateEntry"> {this.props.entry.date} </div>
                         <div className="journalInfoWrapper">
@@ -125,7 +125,7 @@ class JournalEntry extends Component {
                       </div>
                 </div>
                 
-                <div className="row bottomOfEntryWrapper">
+                <div className="row row-auto-resize bottomOfEntryWrapper">
                     <div className="col-md-offset-4 col-md-4 descriptionWrapperWrapper">
                         <div className="description">
                             <strong>Description: </strong>{this.props.entry.description}
